@@ -3,7 +3,7 @@
 
 #include <vector>
 
-class PathfindingAlgorithm;
+class SortingAlgorithm;
 class Benchmark
 {
 public:
@@ -11,7 +11,7 @@ public:
 	~Benchmark();
 
 	void CreateVectors();
-	void BenchmarkAlgorithm(PathfindingAlgorithm* pAlgorithm);
+	void BenchmarkAlgorithm(SortingAlgorithm* pAlgorithm);
 
 private:
 	void PrintVector(std::vector<int> const& vector);
@@ -35,3 +35,5 @@ private:
 
 
 };
+
+#endif
