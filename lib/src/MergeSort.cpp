@@ -1,5 +1,5 @@
 #include "MergeSort.h"
-
+#include <iostream>
 MergeSort::MergeSort()
 	: SortingAlgorithm("Merge Sort")
 {
@@ -19,14 +19,27 @@ void MergeSort::MakeMergeSort(std::vector<int>& vector, int rangeBegin, int rang
 	if (rangeEnd - rangeBegin > 2)
 	{
 		MakeMergeSort(vector, rangeBegin, rangeEnd / 2);
+        MakeMergeSort(vector, rangeBegin + rangeEnd / 2, rangeEnd);
 	}
-	
-	for (int i = rangeBegin; i < rangeEnd - rangeBegin; ++i)
-	{
-		if (i + 1 >= vector.size())
-			continue;
 
-		if (vector[i] > vector[i + 1])
-			Swap(vector, i, i + 1);
+	for (int i = rangeBegin; i < rangeEnd / 2; ++i)
+	{
+        for(int j = rangeBegin + rangeEnd / 2; j<rangeEnd; ++j)
+        {
+            m_steps++;
+            if(vector[i] > vector[j])
+            {
+                Swap(vector, i, j);
+                break;
+            }
+
+        }
 	}
+
+	for (int i = 0; i < vector.size(); ++i)
+	{
+		std::cout << vector[i];
+	}
+
+	std::cout << std::endl;
 }

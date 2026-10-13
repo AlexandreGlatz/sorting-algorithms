@@ -21,25 +21,25 @@ int main(int argc, char* argv[])
 	benchmark.BenchmarkAlgorithm(pBubbleSort);
 	benchmark.BenchmarkAlgorithm(pSelectionSort);
 	benchmark.BenchmarkAlgorithm(pInsertionSort);
-	benchmark.BenchmarkAlgorithm(pMergeSort);
+	//benchmark.BenchmarkAlgorithm(pMergeSort);
 
-	//std::vector<int> vector;
-	//vector.resize(10);
+	std::vector<int> vector;
+	vector.resize(10);
 
-	//for (int i = 0; i < vector.size(); ++i)
-	//{
-	//	vector[i] = rand() % vector.size();
-	//	std::cout << vector[i];
-	//}
-	//std::cout << std::endl;
+	for (int i = 0; i < vector.size(); ++i)
+	{
+		vector[i] = rand() % vector.size();
+		std::cout << vector[i];
+	}
+	std::cout << std::endl;
 
-	//pInsertionSort->Sort(vector);
+	pMergeSort->Sort(vector);
 
-	//for (int i = 0; i < vector.size(); ++i)
-	//{
-	//	std::cout << vector[i];
-	//}
-	//std::cout << std::endl;
+	for (int i = 0; i < vector.size(); ++i)
+	{
+		std::cout << vector[i];
+	}
+	std::cout << std::endl;
 
 
 }

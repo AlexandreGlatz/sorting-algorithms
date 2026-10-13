@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.3...4.0)
 project(SortingAlgorithms_library)
 
 file(GLOB SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp")

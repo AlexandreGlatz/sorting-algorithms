@@ -101,7 +101,7 @@ void Benchmark::BenchmarkAlgorithm(SortingAlgorithm* pAlgorithm)
 void Benchmark::PrintVector(std::vector<int> const& vector)
 {
 	std::cout << "[ ";
-	for (int i = 0; i < vector.size()-2; ++i)
+	for (int i = 0; i < vector.size() - 1; ++i)
 	{
 		std::cout << "" << vector[i] << ",";
 	}
