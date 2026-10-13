@@ -1,6 +1,6 @@
 #include "BubbleSort.h"
 
-BubbleSort::BubbleSort()
+BubbleSort::BubbleSort() : SortingAlgorithm("Bubble Sort")
 {
 }
 
