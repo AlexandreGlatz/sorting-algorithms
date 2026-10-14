@@ -4,6 +4,7 @@
 #include "SelectionSort.h"
 #include "InsertionSort.h"
 #include "MergeSort.h"
+#include "QuickSort.h"
 
 #include <ctime>
 #include <iostream>
@@ -15,31 +16,44 @@ int main(int argc, char* argv[])
 	SortingAlgorithm* pSelectionSort = new SelectionSort();
 	SortingAlgorithm* pInsertionSort = new InsertionSort();
 	SortingAlgorithm* pMergeSort = new MergeSort();
+	SortingAlgorithm* pQuickSort = new QuickSort();
 
 	Benchmark benchmark;
 
 	benchmark.BenchmarkAlgorithm(pBubbleSort);
 	benchmark.BenchmarkAlgorithm(pSelectionSort);
 	benchmark.BenchmarkAlgorithm(pInsertionSort);
-	//benchmark.BenchmarkAlgorithm(pMergeSort);
+	benchmark.BenchmarkAlgorithm(pMergeSort);
+	benchmark.BenchmarkAlgorithm(pQuickSort);
+	benchmark.BenchmarkTime(pQuickSort);
+	
+	
 
-	std::vector<int> vector;
-	vector.resize(10);
+	//std::vector<int> vector;
+	//vector.resize(10);
 
-	for (int i = 0; i < vector.size(); ++i)
-	{
-		vector[i] = rand() % vector.size();
-		std::cout << vector[i];
-	}
-	std::cout << std::endl;
+	//for (int i = 0; i < vector.size(); ++i)
+	//{
+	//	vector[i] = rand() % vector.size();
+	//	std::cout << vector[i];
+	//}
+	//std::cout << std::endl;
 
-	pMergeSort->Sort(vector);
+	//std::vector<int> test{ 7,5,12,10,9,1 };
+	//for (int i = 0; i < test.size(); ++i)
+	//{
+	//	std::cout << test[i]<<",";
+	//}
 
-	for (int i = 0; i < vector.size(); ++i)
-	{
-		std::cout << vector[i];
-	}
-	std::cout << std::endl;
+	//std::cout << std::endl;
+
+	//pQuickSort->Sort(vector);
+
+	//for (int i = 0; i < vector.size(); ++i)
+	//{
+	//	std::cout << vector[i];
+	//}
+	//std::cout << std::endl;
 
 
 }

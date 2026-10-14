@@ -12,6 +12,7 @@ public:
 
 	void CreateVectors();
 	void BenchmarkAlgorithm(SortingAlgorithm* pAlgorithm);
+	void BenchmarkTime(SortingAlgorithm* pAlgorithm);
 
 private:
 	void PrintVector(std::vector<int> const& vector);
@@ -32,7 +33,6 @@ private:
 	std::vector<int> m_random50000;
 	std::vector<int> m_sorted50000;
 	std::vector<int> m_reversed50000;
-
 
 };
 

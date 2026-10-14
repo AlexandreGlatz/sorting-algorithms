@@ -2,7 +2,10 @@
 #include "SortingAlgorithm.h"
 
 #include <iostream>
+#include <chrono>
+#include <algorithm>
 
+using Clock = std::chrono::steady_clock;
 Benchmark::Benchmark()
 {
 	CreateVectors();
@@ -106,4 +109,25 @@ void Benchmark::PrintVector(std::vector<int> const& vector)
 		std::cout << "" << vector[i] << ",";
 	}
 	std::cout << vector[vector.size()-1] << " ]" << std::endl;
+}
+
+void Benchmark::BenchmarkTime(SortingAlgorithm* pAlgorithm)
+{
+	auto start{ Clock::now() };
+
+	std::vector<int> copy = m_random50000;
+
+	pAlgorithm->Sort(copy);
+	auto finish{ Clock::now() };
+	std::chrono::duration<double> seconds{ finish - start };
+	std::cout << "time for custom algorithm : " << seconds.count() << std::endl;
+
+	copy = m_random50000;
+	start = Clock::now();
+	std::sort(copy.begin(), copy.end());
+
+	finish = Clock::now();
+	seconds = finish - start;
+	std::cout << "time for std sort : " << seconds.count() << std::endl;
+	
 }

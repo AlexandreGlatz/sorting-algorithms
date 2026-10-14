@@ -13,6 +13,7 @@ public:
 
 private:
 	void MakeMergeSort(std::vector<int>& subvector, int rangeBegin, int rangeEnd);
+	void Merge(std::vector<int>& vector, int start, int mid, int end);
 };
 
 #endif
