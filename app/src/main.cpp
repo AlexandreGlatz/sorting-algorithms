@@ -5,6 +5,7 @@
 #include "InsertionSort.h"
 #include "MergeSort.h"
 #include "QuickSort.h"
+#include "HeapSort.h"
 
 #include <ctime>
 #include <iostream>
@@ -17,6 +18,7 @@ int main(int argc, char* argv[])
 	SortingAlgorithm* pInsertionSort = new InsertionSort();
 	SortingAlgorithm* pMergeSort = new MergeSort();
 	SortingAlgorithm* pQuickSort = new QuickSort();
+	SortingAlgorithm* pHeapSort = new HeapSort();
 
 	Benchmark benchmark;
 
@@ -25,7 +27,8 @@ int main(int argc, char* argv[])
 	benchmark.BenchmarkAlgorithm(pInsertionSort);
 	benchmark.BenchmarkAlgorithm(pMergeSort);
 	benchmark.BenchmarkAlgorithm(pQuickSort);
-	benchmark.BenchmarkTime(pQuickSort);
+	benchmark.BenchmarkAlgorithm(pHeapSort);
+	benchmark.BenchmarkTime(pHeapSort);
 	
 	
 
