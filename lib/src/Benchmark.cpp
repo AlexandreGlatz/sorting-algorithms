@@ -4,101 +4,31 @@
 #include <iostream>
 #include <chrono>
 #include <algorithm>
+#include <iomanip>
 
 using Clock = std::chrono::steady_clock;
 Benchmark::Benchmark()
 {
-	CreateVectors();
 }
 
 Benchmark::~Benchmark()
 {
 }
 
-void Benchmark::CreateVectors()
+
+void Benchmark::BenchmarkAlgorithmsTime(std::vector<SortingAlgorithm*> algorithms)
 {
-	m_random100.resize(100);
-	m_sorted100.resize(100);
-	m_reversed100.resize(100);
-
-	m_random1000.resize(1'000);
-	m_sorted1000.resize(1'000);
-	m_reversed1000.resize(1'000);
-
-	m_random10000.resize(10'000);
-	m_sorted10000.resize(10'000);
-	m_reversed10000.resize(10'000);
-
-	m_random50000.resize(50'000);
-	m_sorted50000.resize(50'000);
-	m_reversed50000.resize(50'000);
-
-	for (int i = 0; i < 50'000; ++i)
+	std::vector<int> sizes{ 100, 1000, 10000, 50000 };
+	for (SortingAlgorithm* pAlgorithm : algorithms)
 	{
-		if(i < 100)
-		{ 
-			m_random100[i] = rand() % 100;
-			m_sorted100[i] = i;
-			m_reversed100[i] = 100 - (i + 1);
+		for (int const& currentSize : sizes)
+		{
+			BenchmarkTime(pAlgorithm, currentSize, LIST_TYPE::SORTED);
+			BenchmarkTime(pAlgorithm, currentSize, LIST_TYPE::RANDOM);
+			BenchmarkTime(pAlgorithm, currentSize, LIST_TYPE::REVERSED);
 		}
-
-		if(i < 1000)
-		{ 
-			m_random1000[i] = rand() % 1000;
-			m_sorted1000[i] = i;
-			m_reversed1000[i] = 1000 - (i + 1);
-		}
-
-		if(i < 10'000)
-		{ 
-			m_random10000[i] = rand() % 10'000;
-			m_sorted10000[i] = i;
-			m_reversed10000[i] = 10'000 - (i + 1);
-		}
-
- 
-		m_random50000[i] = rand() % 50'000;
-		m_sorted50000[i] = i;
-		m_reversed50000[i] = 50'000 - (i + 1);
-
+		std::cout << std::endl;
 	}
-}
-
-void Benchmark::BenchmarkAlgorithm(SortingAlgorithm* pAlgorithm)
-{
-	std::cout << "------------------------------------------------------" << std::endl;
-	pAlgorithm->ResetSteps();
-	std::cout << pAlgorithm->GetName() << " Sort For 100 :" << std::endl;
-
-	std::vector<int> copy = m_random100;
-	pAlgorithm->Sort(copy);
-
-	std::cout << "\t Random values : " << std::endl;
-	std::cout << "\t\t Starting Vector : "; PrintVector(m_random100);
-	std::cout << "\t\t End vector : "; PrintVector(copy);
-	std::cout << "\t\t Steps amount : " << pAlgorithm->GetSteps()<<std::endl<<std::endl;
-
-	pAlgorithm->ResetSteps();
-
-	copy = m_reversed100;
-	pAlgorithm->Sort(copy);
-
-	std::cout << "\t Reversed values : " <<std::endl;
-	std::cout << "\t\t Starting Vector : "; PrintVector(m_reversed100);
-	std::cout << "\t\t End vector : "; PrintVector(copy);
-	std::cout << "\t\t Steps amount : " << pAlgorithm->GetSteps()<<std::endl<<std::endl;
-
-	pAlgorithm->ResetSteps();
-
-	copy = m_sorted100;
-	pAlgorithm->Sort(copy);
-
-	std::cout << "\t Sorted values : " << std::endl;
-	std::cout << "\t\t Starting Vector : "; PrintVector(m_sorted100);
-	std::cout << "\t\t End vector : "; PrintVector(copy);
-	std::cout << "\t\t Steps amount : " << pAlgorithm->GetSteps()<<std::endl<<std::endl;
-
-	pAlgorithm->ResetSteps();
 }
 
 void Benchmark::PrintVector(std::vector<int> const& vector)
@@ -111,23 +41,64 @@ void Benchmark::PrintVector(std::vector<int> const& vector)
 	std::cout << vector[vector.size()-1] << " ]" << std::endl;
 }
 
-void Benchmark::BenchmarkTime(SortingAlgorithm* pAlgorithm)
+void Benchmark::BenchmarkTime(SortingAlgorithm* pAlgorithm, int size, LIST_TYPE type)
 {
+	std::vector<int> toTest;
+	std::string typeStr;
+	switch (type)
+	{
+	case LIST_TYPE::RANDOM:
+		toTest = CreateRandomVector(size);
+		typeStr = "random";
+		break;
+	case LIST_TYPE::REVERSED:
+		toTest = CreateReversedVector(size);
+		typeStr = "reversed";
+		break;
+	case LIST_TYPE::SORTED:
+		toTest = CreateSortedVector(size);
+		typeStr = "sorted";
+		break;
+	}
+
 	auto start{ Clock::now() };
 
-	std::vector<int> copy = m_random50000;
-
-	pAlgorithm->Sort(copy);
+	pAlgorithm->Sort(toTest);
 	auto finish{ Clock::now() };
 	std::chrono::duration<double> seconds{ finish - start };
-	std::cout << "time for custom algorithm : " << seconds.count() << std::endl;
+	std::cout << "For " << size << " elements, on a "<<typeStr<<" list.\t Time for " << pAlgorithm->GetName() << " algorithm : " << std::setiosflags(std::ios_base::fixed) << std::setprecision(5) << seconds.count() <<"s"<<  std::endl;
+}
 
-	copy = m_random50000;
-	start = Clock::now();
-	std::sort(copy.begin(), copy.end());
+std::vector<int> Benchmark::CreateRandomVector(int size)
+{
+	std::vector<int> ret(size);
+	for (int i = 0; i < size; ++i)
+	{
+		ret[i] = rand() % 1000;
+	}
 
-	finish = Clock::now();
-	seconds = finish - start;
-	std::cout << "time for std sort : " << seconds.count() << std::endl;
-	
+	return ret;
+}
+
+
+std::vector<int> Benchmark::CreateSortedVector(int size)
+{
+	std::vector<int> ret(size);
+	for (int i = 0; i < size; ++i)
+	{
+		ret[i] = i;
+	}
+
+	return ret;
+}
+
+std::vector<int> Benchmark::CreateReversedVector(int size)
+{
+	std::vector<int> ret(size);
+	for (int i = size - 1; i >= 0; --i)
+	{
+		ret[i] = i;
+	}
+
+	return ret;
 }
