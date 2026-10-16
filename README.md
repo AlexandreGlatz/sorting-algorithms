@@ -1,0 +1,79 @@
+# Results for every sorts
+
+For 100 elements, on a sorted list.	    Time for Bubble Sort algorithm : 0.00000s<br>
+For 100 elements, on a random list.	    Time for Bubble Sort algorithm : 0.00001s<br>
+For 100 elements, on a reversed list.	Time for Bubble Sort algorithm : 0.00000s<br>
+For 1000 elements, on a sorted list.	Time for Bubble Sort algorithm : 0.00025s<br>
+For 1000 elements, on a random list.	Time for Bubble Sort algorithm : 0.00104s<br>
+For 1000 elements, on a reversed list.	Time for Bubble Sort algorithm : 0.00033s<br>
+For 10000 elements, on a sorted list.	Time for Bubble Sort algorithm : 0.02462s<br>
+For 10000 elements, on a random list.	Time for Bubble Sort algorithm : 0.09674s<br>
+For 10000 elements, on a reversed list.	Time for Bubble Sort algorithm : 0.02416s<br>
+For 50000 elements, on a sorted list.	Time for Bubble Sort algorithm : 0.59335s<br>
+For 50000 elements, on a random list.	Time for Bubble Sort algorithm : 2.42851s<br>
+For 50000 elements, on a reversed list.	Time for Bubble Sort algorithm : 0.39580s<br>
+<br>
+For 100 elements, on a sorted list.	    Time for Selection Sort algorithm : 0.00001s<br>
+For 100 elements, on a random list.	    Time for Selection Sort algorithm : 0.00001s<br>
+For 100 elements, on a reversed list.	Time for Selection Sort algorithm : 0.00001s<br>
+For 1000 elements, on a sorted list.	Time for Selection Sort algorithm : 0.00045s<br>
+For 1000 elements, on a random list.	Time for Selection Sort algorithm : 0.00070s<br>
+For 1000 elements, on a reversed list.	Time for Selection Sort algorithm : 0.00046s<br>
+For 10000 elements, on a sorted list.	Time for Selection Sort algorithm : 0.04442s<br>
+For 10000 elements, on a random list.	Time for Selection Sort algorithm : 0.05087s<br>
+For 10000 elements, on a reversed list.	Time for Selection Sort algorithm : 0.04418s<br>
+For 50000 elements, on a sorted list.	Time for Selection Sort algorithm : 1.11106s<br>
+For 50000 elements, on a random list.	Time for Selection Sort algorithm : 1.25535s<br>
+For 50000 elements, on a reversed list.	Time for Selection Sort algorithm : 1.12336s<br>
+<br>
+For 100 elements, on a sorted list.	    Time for Insertion Sort algorithm : 0.00000s<br>
+For 100 elements, on a random list.	    Time for Insertion Sort algorithm : 0.00000s<br>
+For 100 elements, on a reversed list.	Time for Insertion Sort algorithm : 0.00000s<br>
+For 1000 elements, on a sorted list.	Time for Insertion Sort algorithm : 0.00000s<br>
+For 1000 elements, on a random list.	Time for Insertion Sort algorithm : 0.00044s<br>
+For 1000 elements, on a reversed list.	Time for Insertion Sort algorithm : 0.00000s<br>
+For 10000 elements, on a sorted list.	Time for Insertion Sort algorithm : 0.00001s<br>
+For 10000 elements, on a random list.	Time for Insertion Sort algorithm : 0.03397s<br>
+For 10000 elements, on a reversed list.	Time for Insertion Sort algorithm : 0.00001s<br>
+For 50000 elements, on a sorted list.	Time for Insertion Sort algorithm : 0.00003s<br>
+For 50000 elements, on a random list.	Time for Insertion Sort algorithm : 0.84785s<br>
+For 50000 elements, on a reversed list.	Time for Insertion Sort algorithm : 0.00003s<br>
+<br>
+For 100 elements, on a sorted list.	    Time for Merge Sort algorithm : 0.00000s<br>
+For 100 elements, on a random list.	    Time for Merge Sort algorithm : 0.00000s<br>
+For 100 elements, on a reversed list.	Time for Merge Sort algorithm : 0.00000s<br>
+For 1000 elements, on a sorted list.	Time for Merge Sort algorithm : 0.00001s<br>
+For 1000 elements, on a random list.	Time for Merge Sort algorithm : 0.00004s<br>
+For 1000 elements, on a reversed list.	Time for Merge Sort algorithm : 0.00001s<br>
+For 10000 elements, on a sorted list.	Time for Merge Sort algorithm : 0.00015s<br>
+For 10000 elements, on a random list.	Time for Merge Sort algorithm : 0.00048s<br>
+For 10000 elements, on a reversed list.	Time for Merge Sort algorithm : 0.00015s<br>
+For 50000 elements, on a sorted list.	Time for Merge Sort algorithm : 0.00095s<br>
+For 50000 elements, on a random list.	Time for Merge Sort algorithm : 0.00256s<br>
+For 50000 elements, on a reversed list.	Time for Merge Sort algorithm : 0.00096s<br>
+<br>
+For 100 elements, on a sorted list.	    Time for Quick Sort algorithm : 0.00001s<br>
+For 100 elements, on a random list.	    Time for Quick Sort algorithm : 0.00000s<br>
+For 100 elements, on a reversed list.	Time for Quick Sort algorithm : 0.00001s<br>
+For 1000 elements, on a sorted list.	Time for Quick Sort algorithm : 0.00076s<br>
+For 1000 elements, on a random list.	Time for Quick Sort algorithm : 0.00004s<br>
+For 1000 elements, on a reversed list.	Time for Quick Sort algorithm : 0.00067s<br>
+For 10000 elements, on a sorted list.	Time for Quick Sort algorithm : 0.06790s<br>
+For 10000 elements, on a random list.	Time for Quick Sort algorithm : 0.00043s<br>
+For 10000 elements, on a reversed list.	Time for Quick Sort algorithm : 0.06853s<br>
+For 50000 elements, on a sorted list.	Time for Quick Sort algorithm : 1.71193s<br>
+For 50000 elements, on a random list.	Time for Quick Sort algorithm : 0.00256s<br>
+For 50000 elements, on a reversed list.	Time for Quick Sort algorithm : 1.70461s<br>
+<br>
+For 100 elements, on a sorted list.	    Time for Heap Sort algorithm : 0.00002s<br>
+For 100 elements, on a random list.	    Time for Heap Sort algorithm : 0.00001s<br>
+For 100 elements, on a reversed list.	Time for Heap Sort algorithm : 0.00001s<br>
+For 1000 elements, on a sorted list.	Time for Heap Sort algorithm : 0.00055s<br>
+For 1000 elements, on a random list.	Time for Heap Sort algorithm : 0.00059s<br>
+For 1000 elements, on a reversed list.	Time for Heap Sort algorithm : 0.00054s<br>
+For 10000 elements, on a sorted list.	Time for Heap Sort algorithm : 0.05228s<br>
+For 10000 elements, on a random list.	Time for Heap Sort algorithm : 0.05483s<br>
+For 10000 elements, on a reversed list.	Time for Heap Sort algorithm : 0.05411s<br>
+For 50000 elements, on a sorted list.	Time for Heap Sort algorithm : 1.34494s<br>
+For 50000 elements, on a random list.	Time for Heap Sort algorithm : 1.38756s<br>
+For 50000 elements, on a reversed list.	Time for Heap Sort algorithm : 1.35427s<br>
